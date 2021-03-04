@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <link rel="stylesheet" href="/i/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+
+    {% include meta.html %}
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="stylesheet" href="/i/gruvbox-dark.css">
+    <script src="/i/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body>
+    <div class="container row">
+        <div class="col-md-4 col-12">
+            <div class="wrapper-masthead">
+              <div class="container">
+                <header class="masthead clearfix">
+                  <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+
+                  <div class="site-info">
+                    <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+                    <p class="site-description">{{ site.description }}</p>
+                  </div>
+
+                  <nav>
+                    <a href="{{ site.baseurl }}/about">About</a>
+                    <a href="{{ site.baseurl }}/movies">Movies</a>
+                  </nav>
+                  <nav>
+                      {% include svg-icons.html %}
+                  </nav>
+                </header>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-12">
+            <div id="main" role="main" class="container">
+              {{ content }}
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <span style="display: block">a fork of <a href="https://github.com/barryclark/jekyll-now" target="_blank">barryclark/jekyll-now</a></span>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

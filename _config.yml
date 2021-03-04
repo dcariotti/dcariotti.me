@@ -1,0 +1,40 @@
+name: Santo Cariotti
+description: Computer Programmer 🧘 from Italy 
+avatar: /avatar.jpg
+footer-links:
+  flickr: photos/dcariotti
+  github: dcariotti
+  instagram: arcticsanto
+  linkedin: santocariotti
+  keybase: dcariotti
+  rss: y
+
+google_analytics:
+url: https://dcariotti.me
+
+baseurl: ""
+
+paginate: 10
+paginate_path: /blog/page/:num/
+permalink: /blog/:year/:month/:day/:title/
+
+version: v1
+
+kramdown:
+  input: GFM
+
+sass:
+  style: :compressed
+
+
+plugins:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-paginate
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME

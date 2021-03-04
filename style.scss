@@ -1,0 +1,336 @@
+---
+---
+
+//
+// IMPORTS
+//
+
+@import "ubuntu";
+@import "reset";
+@import "variables";
+// Syntax highlighting @import is at the bottom of this file
+
+/**************/
+/* BASE RULES */
+/**************/
+
+html {
+  font-size: 100%;
+}
+
+.hljs {
+  font-family: "Ubuntu", monospace;
+  font-size: 18px;
+}
+
+body {
+  font: 18px/1.4 $helvetica;
+  color: $darkGray;
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 1280px;
+  padding: 0 10px;
+  width: 100%;
+  &.row .col-12 {
+    @include mobile {
+      padding: 0;
+    }
+  }
+  @include mobile {
+    padding: 0; margin: 0;
+  }
+}
+
+.page h1 {
+  margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $helveticaNeue;
+  color: $darkerGray;
+  font-weight: bold;
+
+  line-height: 1.7;
+  margin: 1em 0 15px;
+  padding: 0;
+
+  @include mobile {
+    line-height: 1.4;
+  }
+}
+
+h1 {
+  font-size: 30px;
+  a {
+    color: $blue;
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+  color: $gray;
+}
+
+p {
+  margin: 15px 0;
+}
+
+a {
+  color: lighten($blue, 20%);
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 400;
+  &:hover, &:active {
+    color: lighten($blue, 25%);
+  }
+}
+
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+ol ul, ul ol, ul ul, ol ol {
+  margin: 0;
+}
+
+ul ul, ol ul {
+  list-style-type: circle;
+}
+
+em, i {
+  font-style: italic;
+}
+
+strong, b {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Fixes images in popup boxes from Google Translate
+.gmnoprint img {
+  max-width: none;
+}
+
+.date {
+  font-style: italic;
+  color: $gray;
+}
+
+// Specify the color of the selection
+::-moz-selection {
+  color: $black;
+  background: $lightGray;
+}
+::selection {
+  color: $black;
+  background: $lightGray;
+}
+
+// Nicolas Gallagher's micro clearfix hack
+// http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*********************/
+/* LAYOUT / SECTIONS */
+/*********************/
+
+//
+// .masthead
+//
+
+.wrapper-masthead {
+  margin-bottom: 50px;
+}
+
+.masthead {
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+  padding: 1em;
+  border-radius: 2px;
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.site-avatar {
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  img {
+    border-radius: 100%;
+  }
+}
+
+.site-info {
+  float: left;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.site-name {
+  margin: 0;
+  color: $darkGray;
+  cursor: pointer;
+  font-family: $helveticaNeue;
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.site-description {
+  margin: -5px 0 0 0;
+  color: $gray;
+  font-size: 15px;
+
+  @include mobile {
+    margin: 3px 0;
+  }
+}
+
+.bottompagination .navigation {
+  display: block;
+  padding: 35px 0 0 0;
+  text-align: center;
+  color: #999;
+}
+
+nav {
+  float: right;
+  margin-top: 23px; // @TODO: Vertically middle align
+  font-family: $helveticaNeue;
+  font-size: 18px;
+
+  @include mobile {
+    float: none;
+    margin-top: 9px;
+    display: block;
+    font-size: 16px;
+  }
+
+  a {
+    margin-left: 20px;
+    color: $darkGray;
+    text-align: right;
+    font-weight: 300;
+    letter-spacing: 1px;
+    &:hover {
+      color: $darkGray;
+      text-decoration: none;
+      border-bottom: 2px $darkGray solid;
+      padding-bottom: 3px;
+    }
+
+    @include mobile {
+      margin: 0 10px;
+      color: $blue;
+    }
+  }
+}
+
+//
+// .main
+//
+
+.posts > .post {
+  margin-bottom: 2em;  
+  padding-bottom: 2em;
+  border-bottom: 1px solid $lightGray;
+}
+
+.center > img {
+  display: block;
+  margin: 0 auto;
+}
+
+.post {
+  h1 {
+    color: $blue;
+    margin: 0 0 1em;
+  }
+
+  blockquote {
+    margin: 1.8em .8em;
+    border-left: 2px solid $gray;
+    padding: 0.1em 1em;
+    color: $gray;
+    font-size: 22px;
+    font-style: italic;
+  }
+
+  .comments {
+    margin-top: 10px;
+  }
+
+  .read-more {
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+
+  .date {
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  a i {
+    color: $gray;
+    font-size: 1.5em;
+  }
+}
+.card {
+  border: none;
+}
+
+#main > .post {
+  padding: 0 25px;
+}
