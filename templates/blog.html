@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>{% if section.title %}{{ section.title }} – {% endif %}{{ config.extra.name }} – {{ config.extra.description }}</title>
+{% endblock title %}
+
+{% block content %}
+  {{ section.content | safe }}
+
+  <div class="posts">
+  {% for post in paginator.pages %}
+    <article class="post card">
+      <div class="card-body">
+        <span class="date" style="float:right">{{ post.date|date(format="%B %e, %Y") }}</span>
+        <h1><a href="{{ post.permalink }}">{{ post.title }}</a></h1>
+        <div class="entry">
+          {{ post.content | safe | striptags | truncate(length=300) }}...
+        </div>
+        <a href="{{ post.permalink }}" class="read-more">Read More</a>
+      </div>
+    </article>
+  {% endfor %}
+  </div>
+
+  <div class="bottompagination">
+    <div class="navigation" role="navigation">
+      <div class="pagination">
+        {% if paginator.previous %}
+          <a class="mr-3" href="{{ paginator.previous }}">‹ Previous</a>
+        {% endif %}
+        {% if paginator.next %}
+          <a href="{{ paginator.next }}">Next ›</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock content %}

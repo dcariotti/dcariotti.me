@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/dcariotti
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://dcariotti.me
+  * I am dcariotti (https://keybase.io/dcariotti) on keybase.
+  * I have a public key ASC27t2SusnA016UanHzq-_R2g4KmjXwY8SvM7MdTFvTtgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010196805c706eec042ac8e62f793135c7a5138470553efc126fe1f0f37af7ea1f9d0a",
+      "host": "keybase.io",
+      "kid": "0120b6eedd92bac9c0d35e946a71f3abefd1da0e0a9a35f063c4af33b31d4c5bd3b60a",
+      "uid": "55d325e35fd1f97ee5308230e6bfd819",
+      "username": "dcariotti"
+    },
+    "merkle_root": {
+      "ctime": 1608215000,
+      "hash": "2331dfc151e05cfefd360ed57d3cbc0dd43173d9c19f612adf1a7ee4ba45de9e0d0423b806708589a00db9ad4715eec10b1ca5c33a569377593a4eafb5c0711a",
+      "hash_meta": "8a5716acf177ad7b1912284b7c65f8601ef941d9b625a4df947bc29c62c5534a",
+      "seqno": 18428831
+    },
+    "service": {
+      "entropy": "BUgDWm0cK5bWF0Wfnkq90+Sy",
+      "hostname": "dcariotti.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.2"
+  },
+  "ctime": 1608215034,
+  "expire_in": 504576000,
+  "prev": "0ba1ce4362c474ace4ea1eafd81596a753a2da3c645f07c4ec89649713cfa8d0",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgtu7dkrrJwNNelGpx86vv0doOCpo18GPErzOzHUxb07YKp3BheWxvYWTESpcCCMQgC6HOQ2LEdKzk6h6v2BWWp1Oi2jxkXwfE7IlklxPPqNDEIEZ6OMuTC+sL/L867CLpuPfMtZLZwXwKL1gDQmzAytB4AgHCo3NpZ8RASr3YV1oz5jgDuV8zgHCz16AWREHolSFmN0WRLqZdzVtm0rTALPAYRhp1R0B506WEKT6RynlS7hltv4TLdDznB6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEID9PMXd767CdMXv20ZV8yaZSMkqAfIWR/rsWKa8TcWTso3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dcariotti
+
+==================================================================
