@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block title %}
-<title>{% if section.title %}{{ section.title }} – {% endif %}{{ config.extra.name }} – {{ config.extra.description }}</title>
-{% endblock title %}
-
-{% block content %}
-  {{ section.content|safe }}
-{% endblock content %}
