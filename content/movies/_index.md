@@ -4,6 +4,7 @@ title = "Movies"
 +++
 
 ## 2021
+### [La prima cosa bella](https://www.imdb.com/title/tt1467273/) &middot; `mar, 7th`
 ### [The Goonies](https://www.imdb.com/title/tt0089218/) &middot; `feb, 27th`
 ### [The Fifth Estate](https://www.imdb.com/title/tt1837703/) &middot; `feb, 21st`
 ### [The Trial of the Chicago 7](https://www.imdb.com/title/tt1070874/) &middot; `feb, 21st`
