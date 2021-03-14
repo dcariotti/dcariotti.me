@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<title>DMI Coding Contest 04&#x2F;04&#x2F;2020, &quot;La guantiera di dolcetti&quot; versione con coda di priorità &middot; Santo Cariotti</title>
+
+    <link rel="stylesheet" href="/i/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https:&#x2F;&#x2F;dcariotti.me/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="Santo Cariotti - Computer Programmer 🧘 from Italy" href="https:&#x2F;&#x2F;dcariotti.me/rss.xml" />
+
+    <meta property="og:site_name" content="https:&#x2F;&#x2F;dcariotti.me">
+    <meta property="og:title" content="Santo Cariotti">
+    <meta property="og:description" content="Santo Cariotti - Computer Programmer 🧘 from Italy">
+    <meta property="og:url" content="https:&#x2F;&#x2F;dcariotti.me/">
+    <meta property="og:image" content="https:&#x2F;&#x2F;dcariotti.me/avatar.jpg" />
+    <meta name="description" content="Santo Cariotti - Computer Programmer 🧘 from Italy">
+    <meta name="keywords" content="website,dcariotti,github,coding,programming">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https:&#x2F;&#x2F;dcariotti.me/">
+    <meta property="twitter:title" content="Santo Cariotti">
+    <meta property="twitter:description" content="Santo Cariotti - Computer Programmer 🧘 from Italy">
+    <meta property="twitter:image" content="https:&#x2F;&#x2F;dcariotti.me/avatar.jpg">
+  </head>
+
+  <body>
+    <div class="container row head">
+        <div class="col-md-4 col-12">
+            <div class="wrapper-masthead">
+              <div class="container head">
+                <header class="masthead clearfix">
+                  <a href="https:&#x2F;&#x2F;dcariotti.me/" class="site-avatar"><img src="&#x2F;avatar.jpg" /></a>
+
+                  <div class="site-info">
+                    <h1 class="site-name"><a href="https:&#x2F;&#x2F;dcariotti.me/">Santo Cariotti</a></h1>
+                    <p class="site-description">Computer Programmer 🧘 from Italy</p>
+                  </div>
+
+                  <nav>
+                    <a href="https:&#x2F;&#x2F;dcariotti.me/about">About</a>
+                    <a href="https:&#x2F;&#x2F;dcariotti.me/movies">Movies</a>
+                    <a href="https:&#x2F;&#x2F;dcariotti.me/pubs">Pubs</a>
+                  </nav>
+                  <nav>
+                    <a href="https://www.flickr.com/photos/dcariotti" target="_blank"><i class="fab fa-flickr"></i></a>
+                    <a href="https://www.twitter.com/dcariotti" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://github.com/dcariotti" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com/arcticsanto" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/santocariotti" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://keybase.io/dcariotti"><i class="fab fa-keybase"></i></a>
+                    <a href="https:&#x2F;&#x2F;dcariotti.me&#x2F;rss.xml"><i class="fas fa-rss"></i></a>
+                  </nav>
+                </header>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-12">
+            <div id="main" role="main" class="container">
+                
+<article class="post">
+  <h1>DMI Coding Contest 04&#x2F;04&#x2F;2020, &quot;La guantiera di dolcetti&quot; versione con coda di priorità</h1>
+
+  <div class="entry">
+    <p>La versione dell'esercizio qui di seguito de <strong>&quot;La guantiera di dolcetti&quot;</strong> (esercizio proposto dal DMI per il <a href="http://www.dmi.unict.it/%7Eprog2/home.php">Coding Contest</a> del 04/04/2020) è spiegata utilizzando una <a href="https://en.wikipedia.org/wiki/Priority_queue">coda di priorità</a>, ma, ovviamente, può esser risolta in modo più semplice e, forse, più ottimizzato.</p>
+<h3 id="specifiche-dell-esercizio">Specifiche dell'esercizio</h3>
+<p><em>Si assuma che Francesco e Montalbano assegnino, indipendentemente, a ciascun dolcetto della guantiera un punteggio. I punteggi assegnati da Montalbano non saranno quindi necessariamente uguali a quelli assegnati da Francesco.
+Si aiuti Francesco e il commissario Montalbano a dividersi i dolcetti alla ricotta in maniera che la somma complessiva dei punteggi assegnata ad ognuno dei dolcetti scelti sia massima. Più formalmente si dovrà massimizzare la somma dei punteggi assegnati da Montalbano ai dolcetti da lui scelti e la somma dei punteggi assegnati da Francesco ai dolcetti da lui scelti.</em></p>
+<h3 id="dati-in-input">Dati in input</h3>
+<p><em>L'input è costituito da 100 righe, una per ogni task. Ogni riga del file di input contiene un valore N che indica il numero di dolcetti presenti nel vassoio, seguito da N coppie composte da due interi positivi. I valori dell'i-esima coppia indicano i punteggi assegnati da Montalbano e Francesco, rispettivamente, per l'i-esimo dolcetto.</em></p>
+<h3 id="dati-in-output">Dati in output</h3>
+<p><em>Il file di output è composto da 100 righe, una per ogni task presente nel file di input. Ogni riga conterrà la massima somma possibile dei punteggi ottenuta dalla divisione dei dolcetti.</em></p>
+<h4 id="facciamo-attenzione-alle-note">Facciamo attenzione alle note</h4>
+<ol>
+<li>Il valore di N è sempre compreso tra 4 e 250 ed è sempre pari.</li>
+<li>I voti dei dolcetti sono sempre interi positivi compresi tra 0 e 30.</li>
+<li>Lo stesso dolcetto non può essere scelto sia da Francesco che da Montalbano.</li>
+<li><strong>ma soprattutto, una nota non scritta: Francesco e Montalbano devono avere entrambi lo stesso numero di dolcetti</strong></li>
+</ol>
+<h1 id="algoritmo">Algoritmo</h1>
+<p>Prendiamo come esempio l'input</p>
+<blockquote>
+<p>4 9 2 6 7 1 0 30 4</p>
+</blockquote>
+<p>sappiamo che l'output sarà</p>
+<blockquote>
+<p>48</p>
+</blockquote>
+<p>questo perché, gli elementi cui somma è massima sono le coppie <em>(9, 30)</em> e <em>(7, 0)</em>.</p>
+<h4 id="ma-come-ci-si-arriva-a-dire-questo">Ma come ci si arriva a dire questo?</h4>
+<h6 id="forza-bruta">Forza bruta</h6>
+<p>Un caso possibile è andare col metodo per <a href="https://en.wikipedia.org/wiki/Brute-force_attack">forza bruta</a> ma che, oltre ad essere complesso da implementare, risulterebbe tedioso per input larghi. Questo perché andrebbe a controllare una ad una tutte le somme possibili. In questo caso sarebbe lungo anche l'output per il debug.</p>
+<h6 id="coppie-di-valori">Coppie di valori</h6>
+<p>Controlliamo una ad una le coppie <strong>(9|2)</strong>, <strong>(6|7)</strong>, <strong>(1|0)</strong>, <strong>(30|4)</strong> considerando il primo elemento delle coppie come <strong>i dolcetti di Montalbano</strong> e il secondo per <strong>Francesco</strong> (o vice versa).
+Ora controllare l'ememento della coppia e inserirlo in una lista d'appoggio.</p>
+<p><img src="https://i.imgur.com/WzHaqIO.png" alt="pseudo code" />
+Gli elementi di suddette liste sarebbero <strong>[9, 1, 30]</strong> per Francesco e <strong>[7]</strong> per Montalbano. Vi si evince che non abbiamo rispettato il punto <em>4</em> delle note. E allora come si risolve? Dovremmo controllare la lista con più elementi e inserire, al posto degli elementi più piccoli, l'elemento a quell'indice.
+Prendiamo l'1 (elemento più piccolo della lista) e aggiungiamo all'altra il valore nell'indice di 1 (che in questo caso è 2). Il valore è 0.
+Cioè, <strong>[9, 30]</strong> e <strong>[7, 0]</strong>. E guarda caso il risultato è giusto: 46!</p>
+<hr />
+<p>In questa tabella si vedono gli elementi selezionati e i loro indici (● sono gli elementi selezionati).</p>
+<ul>
+<li><em>tabella 1</em></li>
+</ul>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>indice</td>
+            <td>francesco</td>
+            <td>montalbaro</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>0</td><td>9 ●</td><td>2</td></tr>
+        <tr><td>1</td><td>6</td><td>7 ●</td></tr>
+        <tr><td>2</td><td>1 (vecchio valore salvato)</td><td>0 ●</td></tr>
+        <tr><td>3</td><td>30 ●</td><td>4</td></tr>
+    </tbody>
+</table>
+<hr />
+<p>Questa soluzione non funziona per tutti, perché non sempre il valore è quello che cerchiamo. Prendiamo ad esempio</p>
+<blockquote>
+<p>8 10 6 2 6 4 1 6 0 1 3 7 8 3 5 4 7</p>
+</blockquote>
+<p>Rendiamolo <em>zuccherino</em> per far vedere le coppie</p>
+<ul>
+<li><em>tabella 2</em></li>
+</ul>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>indice</td>
+            <td>francesco</td>
+            <td>montalbaro</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>0</td><td>10 ●</td><td>6</td></tr>
+        <tr><td>1</td><td>2</td><td>6 ●</td></tr>
+        <tr><td>2</td><td>4 ●</td><td>1 ●</td></tr>
+        <tr><td>3</td><td>6 ●</td><td>0</td></tr>
+        <tr><td>4</td><td>1</td><td>3 ●</td></tr>
+        <tr><td>5</td><td>7</td><td>8 ●</td></tr>
+        <tr><td>6</td><td>3</td><td>5 ●</td></tr>
+        <tr><td>7</td><td>4</td><td>7 ●</td></tr>
+    </tbody>
+</table>
+<p>Qui abbiamo due liste con lunghezze diverse <strong>[10, 4, 6]</strong> e <strong>[6, 3, 8, 5, 7]</strong>. Seguendo l'algoritmo di prima dovremmo prendere il valore <strong>3</strong> della seconda lista ma, il valore che andrebbe ad inserire sarebbe 1. Il risultato sarebbe 46! <strong>ERRATO</strong>.
+Infatti dovremmo togliere il valore <strong>8</strong> ed aggiungere quindi <strong>7</strong> nell'altra lista.</p>
+<hr />
+<p>Ecco la tabella reale e corretta: somma 48.</p>
+<ul>
+<li><em>tabella 2.1</em></li>
+</ul>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>indice</td>
+            <td>francesco</td>
+            <td>montalbaro</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>0</td><td>10 ●</td><td>6</td></tr>
+        <tr><td>1</td><td>2</td><td>6 ●</td></tr>
+        <tr><td>2</td><td>4 ●</td><td>1 ●</td></tr>
+        <tr><td>3</td><td>6 ●</td><td>0</td></tr>
+        <tr><td>4</td><td>1</td><td>3 ●</td></tr>
+        <tr><td>5</td><td>7 ●</td><td>8</td></tr>
+        <tr><td>6</td><td>3</td><td>5 ●</td></tr>
+        <tr><td>7</td><td>4</td><td>7 ●</td></tr>
+    </tbody>
+</table>
+<hr />
+<p>Ma che fa, dovremmo tentare alla fortuna o andare per brute force?!</p>
+<h1 id="soluzione">Soluzione</h1>
+<p>Inseriamo gli elementi nella tabella utilizzando una coda di priorità. Essa usa come struttura una coda ma con la particolarità che gli elementi verranno inseriti seguendo un ordine con complessità pari a <span>\(O(\log n)\)</span>. Prendiamo d'esempio la _tabella 1.0_ e aggiungiamo una colonna che sarà uguale alla differenza tra francesco e montalbano.</p>
+* _tabella 3_
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>indice</td>
+            <td>differenza</td>
+            <td>francesco</td>
+            <td>montalbaro</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>0</td><td>7</td><td>9</td><td>2</td></tr>
+        <tr><td>1</td><td>-1</td><td>6</td><td>7</td></tr>
+        <tr><td>2</td><td>1</td><td>1</td><td>0</td></tr>
+        <tr><td>3</td><td>26</td><td>30</td><td>4</td></tr>
+    </tbody>
+</table>
+<p>gli elementi verranno inseriti nella coda di priorità ordinatamente in modo decrescente per <strong>differenza</strong>.</p>
+<ul>
+<li><em>tabella 3.1</em></li>
+</ul>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>indice</td>
+            <td>differenza</td>
+            <td>francesco</td>
+            <td>montalbaro</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>3</td><td>26</td><td>30</td><td>4</td></tr>
+        <tr><td>0</td><td>7</td><td>9</td><td>2</td></tr>
+        <tr><td>2</td><td>1</td><td>1</td><td>0</td></tr>
+        <tr><td>1</td><td>-1</td><td>6</td><td>7</td></tr>
+    </tbody>
+</table>
+<p>Dato <span>\(N=4\)</span> dove <span>\(N\)</span> è il numero delle righe, sappiamo che dovremmo sommare per Francesco i primi <span>\(N/2\)</span> e per Montalbano gli ultimi <span>\(N/2\)</span>.</p>
+* _tabella 3.2_
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>indice</td>
+            <td>differenza</td>
+            <td>francesco</td>
+            <td>montalbaro</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>3</td><td>26</td><td>30 ●</td><td>4</td></tr>
+        <tr><td>0</td><td>7</td><td>9 ●</td><td>2</td></tr>
+        <tr><td>2</td><td>1</td><td>1</td><td>0 ●</td></tr>
+        <tr><td>1</td><td>-1</td><td>6</td><td>7 ●</td></tr>
+    </tbody>
+</table>
+<hr />
+<p>Prendiamo come esempio invece il vecchio</p>
+<blockquote>
+<p>8 10 6 2 6 4 1 6 0 1 3 7 8 3 5 4 7</p>
+</blockquote>
+<p>Andiamo a modificare la <em>tabella 2.1</em>:</p>
+<ul>
+<li><em>tabella 3.3</em></li>
+</ul>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <td>indice</td>
+            <td>differenza</td>
+            <td>francesco</td>
+            <td>montalbaro</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>3</td><td>6</td><td>6 ●</td><td>0</td></tr>
+        <tr><td>0</td><td>4</td><td>10 ●</td><td>6</td></tr>
+        <tr><td>2</td><td>3</td><td>4 ●</td><td>1</td></tr>
+        <tr><td>5</td><td>-1</td><td>7 ●</td><td>8</td></tr>
+        <tr><td>6</td><td>-2</td><td>3</td><td>5 ●</td></tr>
+        <tr><td>4</td><td>-2</td><td>1</td><td>3 ●</td></tr>
+        <tr><td>7</td><td>-3</td><td>4</td><td>7 ●</td></tr>
+        <tr><td>1</td><td>-4</d><td>2</td><td>6 ●</td></tr>
+    </tbody>
+</table>
+<p>Come possiamo vedere fin da subito, la somma dei valori segnati è 48.</p>
+<hr />
+<h1 id="implementazione">Implementazione</h1>
+<p>Dell'indice non ci facciamo più nulla, quindi non lo salveremo.
+La classe <a href="https://en.cppreference.com/w/cpp/container/priority_queue">priority_queue</a> di STL implementa quasi sempre <strong>heap</strong> come struttura dati, la quale sposta nel suo albero il valore più alto (o che rispetta la comparazione) sempre in cima.</p>
+<pre style="background-color:#282828;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#fa5c4b;">using </span><span style="color:#8ec07c;">tii </span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1aa;"> tuple&lt;</span><span style="color:#fa5c4b;">int</span><span style="color:#fdf4c1aa;">, </span><span style="color:#fa5c4b;">int</span><span style="color:#fdf4c1aa;">, </span><span style="color:#fa5c4b;">int</span><span style="color:#fdf4c1aa;">&gt;;
+
+</span><span style="color:#fa5c4b;">for</span><span style="color:#fdf4c1aa;">(</span><span style="color:#fa5c4b;">int</span><span style="color:#fdf4c1aa;"> ts </span><span style="color:#fe8019;">= </span><span style="color:#d3869b;">0</span><span style="color:#fdf4c1aa;">; ts </span><span style="color:#fe8019;">&lt; </span><span style="color:#d3869b;">100</span><span style="color:#fdf4c1aa;">; </span><span style="color:#fe8019;">++</span><span style="color:#fdf4c1aa;">ts) {
+    </span><span style="color:#fa5c4b;">int</span><span style="color:#fdf4c1aa;"> N;
+    cin </span><span style="color:#fe8019;">&gt;&gt;</span><span style="color:#fdf4c1aa;"> N;
+
+    priority_queue&lt;tii, vector&lt;tii&gt;&gt; pq;
+    tii qq;
+    </span><span style="color:#fa5c4b;">for</span><span style="color:#fdf4c1aa;">(</span><span style="color:#fa5c4b;">int</span><span style="color:#fdf4c1aa;"> i </span><span style="color:#fe8019;">= </span><span style="color:#d3869b;">0</span><span style="color:#fdf4c1aa;">; i </span><span style="color:#fe8019;">&lt;</span><span style="color:#fdf4c1aa;"> N; </span><span style="color:#fe8019;">++</span><span style="color:#fdf4c1aa;">i) {
+        </span><span style="color:#fa5c4b;">int</span><span style="color:#fdf4c1aa;"> e1, e2;
+        cin </span><span style="color:#fe8019;">&gt;&gt;</span><span style="color:#fdf4c1aa;"> e1 </span><span style="color:#fe8019;">&gt;&gt;</span><span style="color:#fdf4c1aa;"> e2;
+        </span><span style="color:#fdf4c1;">get&lt;</span><span style="color:#d3869b;">0</span><span style="color:#fdf4c1;">&gt;(qq) </span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1aa;"> e1</span><span style="color:#fe8019;">-</span><span style="color:#fdf4c1aa;">e2;
+        </span><span style="color:#fdf4c1;">get&lt;</span><span style="color:#d3869b;">1</span><span style="color:#fdf4c1;">&gt;(qq) </span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1aa;"> e1;
+        </span><span style="color:#fdf4c1;">get&lt;</span><span style="color:#d3869b;">2</span><span style="color:#fdf4c1;">&gt;(qq) </span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1aa;"> e2;
+
+        pq.</span><span style="color:#fdf4c1;">push</span><span style="color:#fdf4c1aa;">(qq);
+    }
+
+    </span><span style="color:#fa5c4b;">int</span><span style="color:#fdf4c1aa;"> counter </span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1aa;"> N;
+    </span><span style="color:#fa5c4b;">int </span><span style="color:#fdf4c1;">sum{}</span><span style="color:#fdf4c1aa;">;
+
+    </span><span style="color:#fa5c4b;">while</span><span style="color:#fdf4c1aa;">(counter</span><span style="color:#fe8019;">-- &gt;</span><span style="color:#fdf4c1aa;"> N</span><span style="color:#fe8019;">/</span><span style="color:#d3869b;">2</span><span style="color:#fdf4c1aa;">) {
+        qq </span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1aa;"> pq.</span><span style="color:#fdf4c1;">top</span><span style="color:#fdf4c1aa;">();
+        sum </span><span style="color:#fe8019;">+= </span><span style="color:#fdf4c1;">get&lt;</span><span style="color:#d3869b;">1</span><span style="color:#fdf4c1;">&gt;(qq)</span><span style="color:#fdf4c1aa;">;
+        pq.</span><span style="color:#fdf4c1;">pop</span><span style="color:#fdf4c1aa;">();
+    }
+
+    </span><span style="color:#fa5c4b;">while</span><span style="color:#fdf4c1aa;">(</span><span style="color:#fe8019;">!</span><span style="color:#fdf4c1aa;">pq.</span><span style="color:#fdf4c1;">empty</span><span style="color:#fdf4c1aa;">()) {
+        qq </span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1aa;"> pq.</span><span style="color:#fdf4c1;">top</span><span style="color:#fdf4c1aa;">();
+        sum </span><span style="color:#fe8019;">+= </span><span style="color:#fdf4c1;">get&lt;</span><span style="color:#d3869b;">2</span><span style="color:#fdf4c1;">&gt;(qq)</span><span style="color:#fdf4c1aa;">;
+        pq.</span><span style="color:#fdf4c1;">pop</span><span style="color:#fdf4c1aa;">();
+    }
+
+    cout </span><span style="color:#fe8019;">&lt;&lt;</span><span style="color:#fdf4c1aa;"> sum </span><span style="color:#fe8019;">&lt;&lt;</span><span style="color:#fdf4c1aa;"> endl;
+}
+</span></code></pre>
+  </div>
+
+  <div class="date">
+    Written on April  5, 2020
+  </div>
+  <div class="bottompagination">
+    <div class="navigation" role="navigation">
+      <div class="pagination">
+        <a href="/blog">‹ Back</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          <span style="display: block">built with <a href="https://www.getzola.org/" target="_blank">zola</a></span>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
